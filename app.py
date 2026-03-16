@@ -15,6 +15,9 @@ socketio = SocketIO(
     app,
     message_queue=os.environ.get("REDIS_URL")
 )
+@app.route("/test")
+def test():
+    return "CI/CD test route working!"
 
 @app.route('/')
 def index():
@@ -55,5 +58,5 @@ def handle_stop_typing(data):
     )
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 8000))
     socketio.run(app, host="0.0.0.0", port=port)

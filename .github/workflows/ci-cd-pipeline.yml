@@ -37,7 +37,7 @@ jobs:
       # Step 6: Build Docker image
       - name: Build Docker Image
         run: docker build -t live-typing-indicator:latest .
-      
+
       # Step 7: Run container to verify
       - name: Run Container
         run: |

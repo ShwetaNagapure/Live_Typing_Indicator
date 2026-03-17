@@ -15,7 +15,9 @@ socketio = SocketIO(
     app,
     message_queue=os.environ.get("REDIS_URL")
 )
-
+@app.route("/test")
+def test():
+    return "CI/CD test route working!"
 
 @app.route('/')
 def index():

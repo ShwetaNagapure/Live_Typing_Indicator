@@ -34,15 +34,15 @@ jobs:
       # Step 5: Set up Docker
       - name: Set up Docker
         uses: docker/setup-buildx-action@v2
-# Step 6: Build Docker image
-- name: Build Docker Image
-  run: docker build -t live-typing-indicator:latest .
-
-# Step 7: Run container to verify
-- name: Run Container
-  run: |
-    docker run -d --name live-typing-indicator -p 3000:3000 live-typing-indicator:latest
-    sleep 10
-    docker ps
-    docker stop live-typing-indicator
-    docker rm live-typing-indicator
+      # Step 6: Build Docker image
+      - name: Build Docker Image
+        run: docker build -t live-typing-indicator:latest .
+      
+      # Step 7: Run container to verify
+      - name: Run Container
+        run: |
+          docker run -d --name live-typing-indicator -p 3000:3000 live-typing-indicator:latest
+          sleep 10
+          docker ps
+          docker stop live-typing-indicator
+          docker rm live-typing-indicator
